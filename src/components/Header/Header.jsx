@@ -66,6 +66,7 @@ const MainHeader = styled.div`
 
   @media (max-width: ${BREAKPOINTS.tablet}) {
     justify-content: space-between;
+    align-items: center;
   }
 
   @media (max-width: ${BREAKPOINTS.phone}) {
@@ -92,7 +93,7 @@ const MobileBar = styled.div`
 
   @media (max-width: ${BREAKPOINTS.tablet}) {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     flex-direction: row;
     gap: 32px;
   }
