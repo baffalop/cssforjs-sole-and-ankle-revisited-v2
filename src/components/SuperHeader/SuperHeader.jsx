@@ -33,7 +33,7 @@ const Wrapper = styled.div`
   padding-left: 32px;
   padding-right: 32px;
 
-  @media (max-width: ${BREAKPOINTS.phone}) {
+  @media (max-width: ${BREAKPOINTS.tablet}) {
     height: 8px;
 
     &>* {

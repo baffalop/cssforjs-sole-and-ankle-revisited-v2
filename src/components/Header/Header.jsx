@@ -57,8 +57,12 @@ const MainHeader = styled.div`
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
 
-  @media (max-width: ${BREAKPOINTS.phone}) {
+  @media (max-width: ${BREAKPOINTS.tablet}) {
     justify-content: space-between;
+  }
+
+  @media (max-width: ${BREAKPOINTS.phone}) {
+    padding: 16px 20px;
   }
 `;
 
@@ -67,7 +71,7 @@ const Nav = styled.nav`
   gap: 48px;
   margin: 0px 48px;
 
-  @media (max-width: ${BREAKPOINTS.phone}) {
+  @media (max-width: ${BREAKPOINTS.tablet}) {
     display: none;
   }
 `;
@@ -79,15 +83,15 @@ const Side = styled.div`
 const MobileBar = styled.div`
   display: none;
 
-  @media (max-width: ${BREAKPOINTS.phone}) {
+  @media (max-width: ${BREAKPOINTS.tablet}) {
     display: flex;
     align-items: baseline;
     flex-direction: row;
-    gap: 24px;
+    gap: 32px;
   }
 
-  &>* {
-
+  @media (max-width: ${BREAKPOINTS.phone}) {
+    gap: 16px;
   }
 `;
 
