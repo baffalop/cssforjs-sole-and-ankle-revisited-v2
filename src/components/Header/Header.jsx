@@ -6,6 +6,7 @@ import Logo from '../Logo';
 import SuperHeader from '../SuperHeader';
 import MobileMenu from '../MobileMenu';
 import Icon from '../Icon';
+import UnstyledButton from '../UnstyledButton';
 
 const navColor = COLORS.gray[900];
 const navIconSize = 28;
@@ -36,9 +37,15 @@ const Header = () => {
         </Side>
 
         <MobileBar>
-          <Icon id="shopping-bag" color={navColor} size={navIconSize} strokeWidth={navStroke} />
-          <Icon id="search" color={navColor} size={navIconSize} strokeWidth={navStroke} />
-          <Icon id="menu" color={navColor} size={navIconSize} strokeWidth={navStroke} onClick={toggleMobileMenu} />
+          <UnstyledButton>
+            <Icon id="shopping-bag" color={navColor} size={navIconSize} strokeWidth={navStroke} />
+          </UnstyledButton>
+          <UnstyledButton>
+            <Icon id="search" color={navColor} size={navIconSize} strokeWidth={navStroke} />
+          </UnstyledButton>
+          <UnstyledButton onClick={toggleMobileMenu}>
+            <Icon id="menu" color={navColor} size={navIconSize} strokeWidth={navStroke} />
+          </UnstyledButton>
         </MobileBar>
       </MainHeader>
 
