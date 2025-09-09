@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { WEIGHTS } from '../../constants';
+import { WEIGHTS, BREAKPOINTS } from '../../constants';
 
 import Breadcrumbs from '../Breadcrumbs';
 import Select from '../Select';
@@ -27,7 +27,7 @@ const ShoeIndex = ({ sortId, setSortId }) => {
         <Spacer size={32} />
         <ShoeGrid />
       </MainColumn>
-      <LeftColumn>
+      <Nav>
         <Breadcrumbs>
           <Breadcrumbs.Crumb href="/">Home</Breadcrumbs.Crumb>
           <Breadcrumbs.Crumb href="/sale">Sale</Breadcrumbs.Crumb>
@@ -35,9 +35,9 @@ const ShoeIndex = ({ sortId, setSortId }) => {
             Shoes
           </Breadcrumbs.Crumb>
         </Breadcrumbs>
-        <Spacer size={42} />
+        <DesktopSpacer size={42} />
         <ShoeSidebar />
-      </LeftColumn>
+      </Nav>
     </Wrapper>
   );
 };
@@ -47,10 +47,19 @@ const Wrapper = styled.div`
   flex-direction: row-reverse;
   align-items: baseline;
   gap: 32px;
+
+  @media (max-width: ${BREAKPOINTS.tablet}) {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
 `;
 
-const LeftColumn = styled.div`
+const Nav = styled.div`
   flex-basis: 248px;
+
+  @media (max-width: ${BREAKPOINTS.tablet}) {
+    flex-basis: revert;
+  }
 `;
 
 const MainColumn = styled.div`
@@ -66,6 +75,12 @@ const Header = styled.header`
 const Title = styled.h2`
   font-size: 1.5rem;
   font-weight: ${WEIGHTS.medium};
+`;
+
+const DesktopSpacer = styled(Spacer)`
+  @media (max-width: ${BREAKPOINTS.tablet}) {
+    display: none;
+  }
 `;
 
 export default ShoeIndex;
