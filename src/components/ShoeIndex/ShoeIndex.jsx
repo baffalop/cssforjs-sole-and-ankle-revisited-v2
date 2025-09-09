@@ -15,18 +15,22 @@ const ShoeIndex = ({ sortId, setSortId }) => {
       <MainColumn>
         <Header>
           <Title>Running</Title>
-          <Select
-            label="Sort"
-            value={sortId}
-            onChange={(ev) => setSortId(ev.target.value)}
-          >
-            <option value="newest">Newest Releases</option>
-            <option value="price">Price</option>
-          </Select>
+
+          <SortSelect>
+            <Select
+              label="Sort"
+              value={sortId}
+              onChange={(ev) => setSortId(ev.target.value)}
+            >
+              <option value="newest">Newest Releases</option>
+              <option value="price">Price</option>
+            </Select>
+          </SortSelect>
         </Header>
         <Spacer size={32} />
         <ShoeGrid />
       </MainColumn>
+
       <Nav>
         <Breadcrumbs>
           <Breadcrumbs.Crumb href="/">Home</Breadcrumbs.Crumb>
@@ -79,6 +83,12 @@ const Title = styled.h2`
 
 const DesktopSpacer = styled(Spacer)`
   @media (max-width: ${BREAKPOINTS.tablet}) {
+    display: none;
+  }
+`;
+
+const SortSelect = styled.div`
+  @media (max-width: ${BREAKPOINTS.phone}) {
     display: none;
   }
 `;
