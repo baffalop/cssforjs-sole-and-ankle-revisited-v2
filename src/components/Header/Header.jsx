@@ -7,6 +7,7 @@ import SuperHeader from '../SuperHeader';
 import MobileMenu from '../MobileMenu';
 import Icon from '../Icon';
 import UnstyledButton from '../UnstyledButton';
+import NavLink from '../NavLink';
 
 const navColor = COLORS.gray[900];
 const navIconSize = 28;
@@ -100,18 +101,6 @@ const MobileBar = styled.div`
 
   @media (max-width: ${BREAKPOINTS.phone}) {
     gap: 16px;
-  }
-`;
-
-const NavLink = styled.a`
-  font-size: 1.125rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: ${COLORS.gray[900]};
-  font-weight: ${WEIGHTS.medium};
-
-  &:first-of-type {
-    color: ${COLORS.secondary};
   }
 `;
 

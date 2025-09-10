@@ -5,6 +5,7 @@ import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
 import Spacer from '../Spacer';
+import NavLink from '../NavLink';
 
 const MobileMenu = ({ isOpen, onDismiss }) => {
   if (!isOpen) {
@@ -22,12 +23,12 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
         <Spacer />
 
         <Nav>
-          <a href="/sale">Sale</a>
-          <a href="/new">New&nbsp;Releases</a>
-          <a href="/men">Men</a>
-          <a href="/women">Women</a>
-          <a href="/kids">Kids</a>
-          <a href="/collections">Collections</a>
+          <NavLink href="/sale">Sale</NavLink>
+          <NavLink href="/new">New&nbsp;Releases</NavLink>
+          <NavLink href="/men">Men</NavLink>
+          <NavLink href="/women">Women</NavLink>
+          <NavLink href="/kids">Kids</NavLink>
+          <NavLink href="/collections">Collections</NavLink>
         </Nav>
 
         <Footer>
