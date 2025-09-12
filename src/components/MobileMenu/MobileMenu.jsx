@@ -11,11 +11,11 @@ import NavLink from '../NavLink';
 const MobileMenu = ({ isOpen, onDismiss }) => {
   return (
     <Dialog open={isOpen}>
-      <DialogTitle>Menu</DialogTitle>
-
       <DialogPortal>
         <Overlay onClick={onDismiss}>
           <Content>
+            <DialogTitle asChild><VisuallyHidden>Menu</VisuallyHidden></DialogTitle>
+
             <DialogClose asChild>
               <Dismiss onClick={onDismiss}>
                 <Icon id="close" />
