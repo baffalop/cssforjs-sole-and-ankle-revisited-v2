@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { BREAKPOINTS, COLORS, WEIGHTS } from '../../constants';
+import { BREAKPOINTS, WEIGHTS } from '../../constants';
 import Logo from '../Logo';
 import SuperHeader from '../SuperHeader';
 import MobileMenu from '../MobileMenu';
@@ -9,7 +9,7 @@ import Icon from '../Icon';
 import UnstyledButton from '../UnstyledButton';
 import NavLink from '../NavLink';
 
-const navColor = COLORS.gray[900];
+const navColor = 'var(--color-gray-900)';
 const navIconSize = 28;
 const navStroke = 2.5;
 
@@ -63,7 +63,7 @@ const MainHeader = styled.div`
   align-items: baseline;
   padding: 18px 32px;
   height: 72px;
-  border-bottom: 1px solid ${COLORS.gray[300]};
+  border-bottom: 1px solid var(--color-gray-300);
   overflow: auto;
 
   @media (max-width: ${BREAKPOINTS.tablet}) {
