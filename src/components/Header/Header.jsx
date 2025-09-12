@@ -64,6 +64,7 @@ const MainHeader = styled.div`
   padding: 18px 32px;
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
+  overflow: auto;
 
   @media (max-width: ${BREAKPOINTS.tablet}) {
     justify-content: space-between;
@@ -77,7 +78,7 @@ const MainHeader = styled.div`
 
 const Nav = styled.nav`
   display: flex;
-  gap: 48px;
+  gap: clamp(0.25rem, 3.5rem, 7vw - 3rem);
   margin: 0px 48px;
 
   @media (max-width: ${BREAKPOINTS.tablet}) {
