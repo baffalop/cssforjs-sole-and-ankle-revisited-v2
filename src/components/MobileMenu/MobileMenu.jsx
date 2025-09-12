@@ -1,4 +1,5 @@
 import React from 'react';
+import { Dialog, DialogClose, DialogContent, DialogOverlay, DialogPortal, DialogTitle } from '@radix-ui/react-dialog'
 import styled from 'styled-components';
 
 import UnstyledButton from '../UnstyledButton';
@@ -8,47 +9,51 @@ import Spacer from '../Spacer';
 import NavLink from '../NavLink';
 
 const MobileMenu = ({ isOpen, onDismiss }) => {
-  if (!isOpen) {
-    return null;
-  }
-
   return (
-    <Overlay onClick={onDismiss}>
-      <Wrapper>
-        <Dismiss onClick={onDismiss}>
-          <Icon id="close" />
-          <VisuallyHidden>Dismiss menu</VisuallyHidden>
-        </Dismiss>
+    <Dialog open={isOpen}>
+      <DialogTitle>Menu</DialogTitle>
 
-        <Spacer />
+      <DialogPortal>
+        <Overlay onClick={onDismiss}>
+          <Content>
+            <DialogClose asChild>
+              <Dismiss onClick={onDismiss}>
+                <Icon id="close" />
+                <VisuallyHidden>Dismiss menu</VisuallyHidden>
+              </Dismiss>
+            </DialogClose>
 
-        <Nav>
-          <NavLink href="/sale">Sale</NavLink>
-          <NavLink href="/new">New&nbsp;Releases</NavLink>
-          <NavLink href="/men">Men</NavLink>
-          <NavLink href="/women">Women</NavLink>
-          <NavLink href="/kids">Kids</NavLink>
-          <NavLink href="/collections">Collections</NavLink>
-        </Nav>
+            <Spacer />
 
-        <Footer>
-          <a href="/terms">Terms and Conditions</a>
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/contact">Contact Us</a>
-        </Footer>
-      </Wrapper>
-    </Overlay>
+            <Nav>
+              <NavLink href="/sale">Sale</NavLink>
+              <NavLink href="/new">New&nbsp;Releases</NavLink>
+              <NavLink href="/men">Men</NavLink>
+              <NavLink href="/women">Women</NavLink>
+              <NavLink href="/kids">Kids</NavLink>
+              <NavLink href="/collections">Collections</NavLink>
+            </Nav>
+
+            <Footer>
+              <a href="/terms">Terms and Conditions</a>
+              <a href="/privacy">Privacy Policy</a>
+              <a href="/contact">Contact Us</a>
+            </Footer>
+          </Content>
+        </Overlay>
+      </DialogPortal>
+    </Dialog>
   );
 };
 
-const Overlay = styled.div`
+const Overlay = styled(DialogOverlay)`
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
 `;
 
-const Wrapper = styled.div`
+const Content = styled(DialogContent)`
   padding: 32px;
   height: 100%;
   width: 20rem;
